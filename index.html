@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For you, Love 🌹</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Quicksand:wght@400;600;700&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#e3b866;--cream:#f6e3cf;--choc:#3b1a14;--red:#a3141f}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:Quicksand,sans-serif;color:var(--cream);background:repeating-linear-gradient(115deg,#ffffff08 0 2px,transparent 2px 26px),radial-gradient(circle at 25% 15%,#9a2030 0,#5a1119 45%,#240b0b 100%);overflow:hidden}
+.screen{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;padding:22px 20px;text-align:center;overflow-y:auto;animation:fade .6s}
+.screen.on{display:flex}.screen.top{justify-content:flex-start}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+h1,h2{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:var(--gold);margin-bottom:8px;text-shadow:0 2px 10px #0006}
+h1{font-size:2rem}h2{font-size:1.75rem}
+p.sub{margin-bottom:16px;opacity:.9;max-width:340px}
+.btn{border:1px solid var(--gold);background:linear-gradient(#b3202c,#7d0f19);color:var(--gold);font:700 1rem Quicksand;padding:12px 28px;border-radius:30px;margin:18px 0 8px;box-shadow:0 6px 18px #0008;cursor:pointer}
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,#6b3420,#a3141f);display:flex;align-items:center;justify-content:center;font-size:2.6rem}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.hearts{display:flex;gap:6px;justify-content:center;margin-bottom:10px}
+.hearts .ph{width:44vw;max-width:190px;aspect-ratio:1;clip-path:url(#h)}
+.hearts{filter:drop-shadow(0 0 8px #e3b86699)}
+.dots{display:flex;gap:12px;justify-content:center;margin:10px 0 16px}
+.dots i{width:16px;height:16px;border-radius:50%;border:2px solid var(--gold)}.dots i.f{background:var(--gold)}
+.pad{display:grid;grid-template-columns:repeat(3,64px);gap:12px;justify-content:center}
+.pad button{height:56px;border-radius:50%;border:1.5px solid var(--gold);background:radial-gradient(circle at 35% 30%,#6b3420,#3b1a14);color:var(--cream);font:700 1.3rem Quicksand;box-shadow:0 3px 8px #0006}
+.pad button:active{background:#7d4026}
+.shake{animation:sh .4s}@keyframes sh{25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
+.err{height:20px;font-size:.9rem;color:#ffb4b4}
+.rose{filter:drop-shadow(0 0 14px #e3b86677);animation:bob 3s infinite ease-in-out;line-height:0;margin-bottom:6px}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.envs{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:8px 0}
+.env{width:100px;background:none;border:0;color:var(--cream);font:600 .78rem Quicksand}
+.env b{display:block;font-size:3rem;animation:bob 2s infinite ease-in-out}.env.open{opacity:.45}.env.open b{animation:none}
+.modal{position:fixed;inset:0;background:#000a;display:none;align-items:center;justify-content:center;padding:24px;z-index:9}.modal.on{display:flex}
+.card{background:var(--cream);color:#4a1c12;border:2px solid var(--gold);border-radius:22px;padding:26px;max-width:340px;box-shadow:0 10px 30px #000a;animation:fade .4s}
+.card h3{font-family:'Playfair Display',serif;font-style:italic;color:var(--red);margin-bottom:8px}
+.tl{width:100%;max-width:380px;border-left:2px solid var(--gold);padding-left:16px;margin:8px 0 0 8px;text-align:left}
+.ev{position:relative;margin-bottom:22px;opacity:0;transform:translateY(14px);transition:.7s}.ev.in{opacity:1;transform:none}
+.ev:before{content:"";position:absolute;left:-23px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+.ev small{color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.ev h4{font:italic 600 1.25rem 'Playfair Display',serif;margin:2px 0 6px}
+.ev .ph{aspect-ratio:3/4;border-radius:12px;margin-bottom:8px;border:1px solid var(--gold)}
+.rcard{min-height:110px;width:100%;max-width:340px;background:var(--choc);border:1.5px dashed var(--gold);border-radius:20px;padding:22px;display:flex;align-items:center;justify-content:center;font:600 1.15rem Quicksand;margin:6px 0}
+.cnt{color:var(--gold);font-weight:700}
+.qa{display:grid;gap:10px;width:100%;max-width:340px;margin-top:10px}
+.qa button{background:var(--choc);color:var(--cream);border:1.5px solid var(--gold);border-radius:16px;padding:12px;font:600 1rem Quicksand}
+.qa button.ok{background:#2f6b3a}.qa button.no{background:#7d0f19}
+.fbk{min-height:44px;margin-top:10px;color:var(--gold);font-weight:700}
+.vinyl{width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,var(--gold) 0 14%,var(--red) 15% 24%,#1a0a07 25% 100%);box-shadow:0 8px 20px #000a;animation:spin 4s linear infinite;animation-play-state:paused;margin:10px auto 16px}
+.vinyl.play{animation-play-state:running}@keyframes spin{to{transform:rotate(360deg)}}
+.trk{background:#3b1a14cc;border:1px solid #e3b86655;border-radius:14px;padding:12px 18px;font-weight:600;cursor:pointer}.trk.on{background:var(--red);border-color:var(--gold)}
+.note{font-size:.85rem;min-height:20px;margin-top:6px}
+.letter{background:var(--cream);color:#4a1c12;background-image:repeating-linear-gradient(transparent 0 27px,#d9b99a 28px);max-width:370px;max-height:58vh;overflow-y:auto;padding:20px;border-radius:10px;border:2px solid var(--gold);box-shadow:0 8px 24px #000a;font:600 1.2rem/28px 'Dancing Script',cursive;text-align:left;white-space:pre-line}
+.yn{display:flex;gap:18px;justify-content:center;align-items:center;margin-top:20px;min-height:60px}
+.big{font:italic 600 1.9rem 'Playfair Display',serif;color:var(--gold);max-width:340px}
+.fl{position:fixed;top:-30px;pointer-events:none;animation:fall linear forwards;z-index:12}@keyframes fall{to{transform:translateY(110vh) rotate(40deg)}}
+</style>
+</head>
+<body>
+<svg width="0" height="0"><clipPath id="h" clipPathUnits="objectBoundingBox"><path d="M.5,.95C.1,.65 0,.4 .1,.22 .2,.05 .42,.08 .5,.25 .58,.08 .8,.05 .9,.22 1,.4 .9,.65 .5,.95Z"/></clipPath></svg>
+
+<section class="screen on" id="s0">
+  <div class="hearts" id="hearts"></div>
+  <h1>Enter our secret code</h1>
+  <p class="sub">Only we know this one, Love 🌹</p>
+  <div class="dots" id="dots"><i></i><i></i><i></i><i></i></div>
+  <div class="err" id="err"></div>
+  <div class="pad" id="pad"></div>
+</section>
+
+<section class="screen" id="s1">
+  <div class="rose" data-s="120"></div>
+  <h2>Hey Love 🌹</h2>
+  <p class="sub">I made something just for you. Start by opening these 💌</p>
+  <div class="envs" id="envs"></div>
+  <button class="btn" onclick="go(2)">Our story →</button>
+</section>
+
+<section class="screen top" id="s2">
+  <h2>Our story</h2>
+  <p class="sub">From the day we met until now</p>
+  <div class="tl" id="tl"></div>
+  <button class="btn" onclick="go(3)">Next →</button>
+</section>
+
+<section class="screen" id="s3">
+  <h2>Reasons I love you</h2>
+  <p class="sub">Tap for one at a time 💗</p>
+  <div class="rcard" id="rc">Ready? 😌</div>
+  <div class="cnt" id="cnt"></div>
+  <button class="btn" id="rbtn" onclick="reason()">Tap for a reason</button>
+  <button class="btn" onclick="go(4)" style="margin-top:0;background:none">Next →</button>
+</section>
+
+<section class="screen" id="s4">
+  <h2>How well do you know us?</h2>
+  <div class="cnt" id="qn"></div>
+  <div class="big" style="font-size:1.4rem;margin:6px 0" id="qq"></div>
+  <div class="qa" id="qa"></div>
+  <div class="fbk" id="fbk"></div>
+  <button class="btn" id="qnext" style="display:none" onclick="go(5)">Next →</button>
+</section>
+
+<section class="screen" id="s5">
+  <h2>Our song</h2>
+  <p class="sub">Press play, Love 🎶</p>
+  <div class="vinyl"></div>
+  <div class="trk" id="trk"></div>
+  <div class="note" id="note"></div>
+  <button class="btn" onclick="go(6)">Next →</button>
+</section>
+
+<section class="screen" id="s6">
+  <div class="rose" data-s="56"></div>
+  <h2>A letter for you</h2>
+  <div class="letter" id="letter"></div>
+  <button class="btn" onclick="go(7)">One last thing →</button>
+</section>
+
+<section class="screen" id="s7">
+  <div class="rose" data-s="90"></div>
+  <div class="big" id="ask"></div>
+  <div class="yn"><button class="btn" id="yes" style="margin:0" onclick="yes()">Yes 💗</button><button class="btn" id="no" style="margin:0;background:none">No 🙈</button></div>
+  <p class="sub" id="done" style="margin-top:20px"></p>
+</section>
+
+<div class="modal" id="modal" onclick="this.classList.remove('on')"><div class="card"><h3 id="mt"></h3><p id="mb"></p><p style="margin-top:12px;opacity:.6;font-size:.85rem">tap to close</p></div></div>
+
+<script>
+/* ====== EDIT THESE ====== */
+const CODE="2005";
+const FROM="Justine";
+const SONG={title:"Way After Forever", artist:"vaultboy", file:"music/song1.mp3"};
+const LOCK_PHOTOS=["p1","p2"];
+const ENVS=[
+ ["Open when you miss me","Close your eyes and picture me smiling at you. I’m counting down the days until I see you, Love 🤍"],
+ ["Open when you’re sad","Take a deep breath. You’re stronger than you know, and I’m always on your side. Always."],
+ ["Open when you need a laugh","You’re the funniest, most playful person I know. Now go smile at yourself in the mirror 😌"]
+];
+const STORY=[
+ ["August 2025","The day we met","A normal day that turned into the best thing that ever happened to me.","p3"],
+ ["Soon after","We got closer","Somewhere between the laughs and the long talks, you became my favorite person.","p4"],
+ ["Always","Your playful side","You turn boring moments into fun. I never know what you’ll do next, and I love it.","p5"],
+ ["Lately","Almost 3 months apart","Distance is tough, but it showed me how much I need you in my life.","p6"],
+ ["Very soon","Seeing you again","I can’t wait to see your face, hear your laugh and hold you.","p7"]
+];
+const REASONS=[
+ "Your laugh makes my whole day better 😂","You’re playful in the best way","You make distance feel smaller","You love me on my good days and my bad days",
+ "Your smile does things to me 🥹","You’re beautiful, inside and out","You make ordinary moments feel special","You’re patient with me","I feel at home with you","Because you’re you, and there’s no one like you 🌹"
+];
+const QUIZ=[
+ {q:"When did we meet?",o:["June 2025","August 2025","October 2025","January 2026"],a:1,ok:"Correct! The best month ever 💗",bad:"Nope 😏 It was August 2025!"},
+ {q:"What’s our song?",o:["Way After Forever","Perfect","Love Story","Die With a Smile"],a:0,ok:"Yes, Love! Our song 🎶",bad:"Seriously?? It’s Way After Forever 😤"},
+ {q:"Who loves who more?",o:["Me 😌","You 😏"],a:-1,ok:"Trick question. I love you more 😘",bad:""}
+];
+const ASK="Love, can I take you out when I see you? 🌹";
+const LETTER=`My Love,
+
+I’ve been counting the days until I see you again, and I can’t wait any longer to tell you what you mean to me.
+
+Since we met in August 2025, you’ve filled my life with laughter, play and a kind of peace I didn’t know I was missing. Being apart for almost three months made me realize my favorite place in the world is wherever you are.
+
+You’re playful, beautiful and so easy to love. Thank you for being patient with me, for making me smile on my hardest days, and for simply being you.
+
+Way after forever, I’m yours.
+
+Always,
+${FROM} 🌹`;
+/* ======================== */
+
+const $=id=>document.getElementById(id);
+const IM=p=>`<img src="images/${p}.jpg" alt="" onerror="this.remove()">`;
+let entered="";
+function go(n){if(n!=5)stopA();document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));$('s'+n).classList.add('on');
+  if(n==1)burst(14);if(n==2)reveal();if(n==4)startQuiz();if(n==6)$('letter').textContent=LETTER;if(n==7)$('ask').textContent=ASK}
+/* lock */
+$('hearts').innerHTML=LOCK_PHOTOS.map(p=>`<div class="ph">🌹${IM(p)}</div>`).join('');
+function draw(){[...$('dots').children].forEach((d,i)=>d.classList.toggle('f',i<entered.length))}
+[1,2,3,4,5,6,7,8,9,'⌫',0,'♥'].forEach(k=>{const b=document.createElement('button');b.textContent=k;b.onclick=()=>press(k);$('pad').appendChild(b)});
+function press(k){
+  if(k==='⌫')entered=entered.slice(0,-1);else if(k!=='♥'&&entered.length<4)entered+=k;
+  draw();$('err').textContent="";
+  if(entered.length==4){
+    if(entered===CODE)setTimeout(()=>go(1),300);
+    else{$('err').textContent="Hmm, not quite. Try again 💭";$('dots').classList.add('shake');setTimeout(()=>{$('dots').classList.remove('shake');entered="";draw()},450)}
+  }
+}
+/* envelopes */
+ENVS.forEach(([t,b])=>{const e=document.createElement('button');e.className='env';e.innerHTML=`<b>💌</b>${t}`;e.onclick=()=>{$('mt').textContent=t;$('mb').textContent=b;$('modal').classList.add('on');e.classList.add('open')};$('envs').appendChild(e)});
+/* story */
+$('tl').innerHTML=STORY.map(([d,t,x,p])=>`<div class="ev"><small>${d}</small><h4>${t}</h4><div class="ph">🌹${IM(p)}</div><p>${x}</p></div>`).join('');
+function reveal(){document.querySelectorAll('.ev').forEach((e,i)=>setTimeout(()=>e.classList.add('in'),300+i*450))}
+/* reasons */
+let ri=0;
+function reason(){if(ri>=REASONS.length){ri=0}$('rc').textContent=REASONS[ri];ri++;$('cnt').textContent=ri+" / "+REASONS.length;$('rbtn').textContent=ri>=REASONS.length?"Start again 🔁":"Another one 💗";burst(3)}
+/* quiz */
+let qi=0;
+function startQuiz(){qi=0;$('qnext').style.display="none";showQ()}
+function showQ(){const q=QUIZ[qi];$('qn').textContent="Question "+(qi+1)+" of "+QUIZ.length;$('qq').textContent=q.q;$('fbk').textContent="";
+  $('qa').innerHTML="";q.o.forEach((o,i)=>{const b=document.createElement('button');b.textContent=o;b.onclick=()=>pick(i,b);$('qa').appendChild(b)})}
+function pick(i,b){const q=QUIZ[qi],good=q.a<0||i===q.a;[...$('qa').children].forEach(x=>x.onclick=null);b.classList.add(good?'ok':'no');$('fbk').textContent=good?q.ok:q.bad;
+  setTimeout(()=>{qi++;if(qi<QUIZ.length)showQ();else{$('qq').textContent="You passed, Love 🏆";$('qn').textContent="";$('qa').innerHTML="";$('fbk').textContent="(I never doubted you)";$('qnext').style.display="inline-block";burst(10)}},1700)}
+/* song */
+let au=null,tk=0;const vin=document.querySelector('.vinyl'),tr=$('trk');
+function lab(on){tr.textContent=(on?'⏸ ':'▶ ')+SONG.title+' · '+SONG.artist;tr.classList.toggle('on',on)}
+function stopA(){tk++;if(au){au.pause();au=null}lab(false);vin.classList.remove('play')}
+tr.onclick=()=>{
+  if(au){if(au.paused){au.play();lab(true);vin.classList.add('play')}else{au.pause();lab(false);vin.classList.remove('play')}return}
+  const t=tk,a=new Audio(SONG.file);a.onended=stopA;$('note').textContent="";
+  a.play().then(()=>{if(t!==tk){a.pause();return}au=a;lab(true);vin.classList.add('play')}).catch(()=>{$('note').textContent="Add the song’s mp3 as music/song1.mp3 first 🎵"})};
+lab(false);
+/* final question */
+const no=$('no');
+function dodge(e){if(e&&e.preventDefault)e.preventDefault();no.style.position='fixed';no.style.left=Math.random()*(innerWidth-110)+'px';no.style.top=Math.random()*(innerHeight-70)+'px'}
+no.addEventListener('pointerenter',dodge);no.addEventListener('pointerdown',dodge);no.addEventListener('touchstart',dodge,{passive:false});
+function yes(){$('done').textContent="Best answer ever. See you soon, Love 🌹";no.style.display='none';burst(40)}
+/* effects */
+function burst(n){for(let i=0;i<n;i++)setTimeout(()=>{const f=document.createElement('div');f.className='fl';f.textContent=['🌹','🍫','✨','🤎','💗'][i%5];f.style.left=Math.random()*95+'vw';f.style.fontSize=(16+Math.random()*18)+'px';f.style.animationDuration=(4+Math.random()*3)+'s';document.body.appendChild(f);setTimeout(()=>f.remove(),7500)},i*150)}
+function rose(sz){let p='';[[40,8,'#4e2214'],[32,7,'#5f2b19'],[25,6,'#74371f'],[18,5,'#8a4528'],[12,4,'#9c5432'],[7,3,'#b0663f']].forEach(([r,n,c],i)=>{for(let k=0;k<n;k++)p+=`<circle cx="50" cy="${50-r*.55}" r="${r*.62}" fill="${c}" stroke="#24100a" stroke-width=".8" transform="rotate(${k*360/n+i*17} 50 50)"/>`});
+return `<svg viewBox="0 0 100 100" width="${sz}" height="${sz}"><defs><radialGradient id="gl" cx=".35" cy=".3" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>${p}<circle cx="50" cy="50" r="46" fill="url(#gl)"/></svg>`}
+document.querySelectorAll('.rose').forEach(e=>e.innerHTML=rose(+e.dataset.s));
+</script>
+</body>
+</html>
